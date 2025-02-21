@@ -19,7 +19,7 @@ Accept the following GitHub classroom assignment: <https://classroom.github.com/
 
 With your project repository open, click the green "Clone or Download" button. Copy the HTTPS URL. Back in a `learncli` container, clone this url with the `git clone <URL>` subcommand. Replace `<URL>` with your copied URL. (Right click to paste in Windows.) After cloning, change your working directory to the cloned repository.
 
-## Part 0. A hex spell reversed is `xeh`
+## Part 0 of 3. A hex spell reversed is `xeh`
 
 The encoded transmission is found at the path `clues/00-nibbles.hex` in your repository.
 
@@ -83,7 +83,7 @@ To  debug your program using input from `stdin`, you will need to update your `l
 
 - Comment out the `args` field: This ensures that your program reads input directly from standard input (`stdin`) instead of using predefined arguments.
 
-To see characters print to the console while stepping through the debugger, you must use fflush() to force the output to appear immediately:
+To see characters print to the console while stepping through the debugger, you must use `fflush()` to force the output to appear immediately:
 
 ```
 fflush(stdout);
@@ -92,14 +92,13 @@ fflush(stdout);
 Why?
 By default, output to `stdout` is buffered, meaning it may not appear immediately during debugging. Calling `fflush()` clears the buffer, ensuring you see output as it is produced.
 
-TODO: For a detailed walkthrough, watch the [debugging video](TODO) for further guidance.
 
 ### Decoding the Clue
 
 Once your basic tests are working, try decoding the first clue:
 
 ~~~bash
-$ cat clues/00-nibbles.hex | ./xeh # Pipes the encoded message to your program.
+$ cat clues/00-nibbles.hex | ./xeh 
 ~~~
 
 Once you've successfully decoded `clues/00-nibbles.hex`, you will now have the clue to bring you to Part 1.
@@ -124,10 +123,10 @@ Use breakpoints and step through your code to identify where the issue occurs.
 You must include the course header in all `.c` files. Style is  manually graded by course staff, after the late deadline, on the following criteria:
 
 - You must use bitwise operations to combine hex digits.
- - Use of curly braces around _all_ control statement bodies (`if`, `while`, `for`, etc)
- - Proper indentation (use the following `vim` trick: `1G=G`)
- - All magic numbers are defined as constants
- - No global variables
- - For parts 0 and 1, only bitwise operations were used in the key conversions between hex and ASCII
- - No libraries outside of `stdlib.h` and `stdio.h` used.
-
+- Use of curly braces around _all_ control statement bodies (`if`, `while`, `for`, etc)
+- All magic numbers are defined as constants
+- No global variables
+- For parts 0 and 1, only bitwise operations were used in the key conversions between hex and ASCII
+- No libraries outside of `stdlib.h` and `stdio.h` used.
+- Do not commit unnecessary files, such as system files (.DS_Store) or build artifacts (a.out).
+- Your commit messages must provide clear and meaningful descriptions of the work being added or changed. A good commit message helps others (and your future self) quickly understand the purpose of a change without needing to dig into the code.
