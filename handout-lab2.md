@@ -13,7 +13,7 @@ The purpose of this lab is to practice working with pointers, dynamic memory all
 
 ### Starter Repository
 
-Accept the following GitHub classroom assignment: [https://classroom.github.com/a/hLEXKE-t](https://classroom.github.com/a/hLEXKE-t)
+Accept the following GitHub classroom assignment: [https://classroom.github.com/a/k5Zt17zm](https://classroom.github.com/a/k5Zt17zm)
 
 With your project repository open, click the green "Clone or Download" button. Copy the HTTPS URL. Back in a learncli container, clone this url with the git clone <URL> subcommand. Replace <URL> with your copied URL. (Right click to paste in Windows.) After cloning, change your working directory to the cloned repository.
 
