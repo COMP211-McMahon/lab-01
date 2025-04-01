@@ -241,7 +241,7 @@ Here is the suggested structure.
 #define LINE_BUFFER_SIZE 128
 #define NUM_LINES_BUFFER_SIZE 5
 
-char** readlines();
+char** readlines(int* num_lines)
 char* readline();
 void printlines(char** lines, int num_lines);
 void freelines(char** lines, int num_lines);
