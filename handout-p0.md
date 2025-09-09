@@ -15,7 +15,7 @@
 
 In this lab you will follow a crumby trail of nibbles and clues, starting with the encoded transmission above. Bit-by-bit you will shift your way closer to the elusive truth. In the end, you will emerge a bitwiser.
 
-Accept the following GitHub classroom assignment: <https://classroom.github.com/a/sZ6Uopor>
+Accept the following GitHub classroom assignment: <https://classroom.github.com/a/2gzHje97>
 
 With your project repository open, click the green "Clone or Download" button. Copy the HTTPS URL. Back in a `learncli` container, clone this url with the `git clone <URL>` subcommand. Replace `<URL>` with your copied URL. (Right click to paste in Windows.) After cloning, change your working directory to the cloned repository.
 
