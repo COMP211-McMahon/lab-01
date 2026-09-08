@@ -5,7 +5,7 @@ geometry:
 
 # Mysterious Parody Bits
 
-## Lab 1 - COMP211 - Spring 2026
+## Lab 1 - COMP211 - Fall 2026
 
 > “In solving a problem of this sort, the grand thing is to be able to reason backwards.
 > That is a very useful accomplishment, and a very easy one, but people do not practise

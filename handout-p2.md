@@ -5,7 +5,7 @@ geometry:
 
 # Mysterious Parody Bits
 
-## Lab 1 - COMP211 - Spring 2026
+## Lab 1 - COMP211 - Fall 2026
 
 > "How often have I said to you that when you have eliminated the impossible,
 >  whatever remains, however improbable, must be the truth?"
