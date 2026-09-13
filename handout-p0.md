@@ -1,9 +1,11 @@
 ---
 geometry:
   - margin=1in
+pdf-engine: weasyprint
+css: code-style.css
+highlight-style: tango
+title: Mysterious Parody Bits
 ---
-
-# Mysterious Parody Bits
 
 ## Lab 1 - COMP211 - Fall 2026
 
@@ -24,6 +26,8 @@ Accept the following assignment: [https://classroom50.org/COMP211-FA26/comp211-f
 
 Clone your `Lab 1` repository. After cloning, change your working directory to the cloned repository.
 
+---
+
 ## Part 0 of 3. A hex spell reversed is `xeh`
 
 In Part 0, you will write a C program named `xeh.c` that reads a hex-encoded file and outputs the decoded ASCII text.
@@ -33,6 +37,7 @@ In Part 0, you will write a C program named `xeh.c` that reads a hex-encoded fil
 You are given a message that was originally plain ASCII text. That text was converted into hexadecimal, where each hex digit is stored as an ASCII character. Your job is to reverse this process and print the original message.
 
 About the input:
+
 - The input will always contain an even number of hex characters.
 
 - Hex letters may be upper- or lower-case.
@@ -75,6 +80,7 @@ To complete this process, your program will follow these steps:
 
 A detailed walkthrough of these steps is provided below.
 
+---
 
 ## Step-by-Step Guide
 
@@ -86,6 +92,8 @@ Instead of trying to write the entire program at once, you should:
 2. Test each piece as you go. This makes bugs easier to find and fix.
 
 This is the mindset you should carry forward in this course and all other courses: large problems become manageable when you decompose them into smaller problems and verify each step before moving on. 
+
+---
 
 **Step 0:** Check out your current file tree.
 
@@ -112,6 +120,8 @@ learncli$ tree
     |   `-- input
     `-- ytirap
 ~~~
+
+---
 
 **Step 1:** Read the input character-by-character.
 
@@ -154,6 +164,8 @@ learncli$ ./xeh < tests/xeh/input/hello.hex
 ~~~
 
 Great, we now have a program that reads input character-by-character from `stdin` and outputs each character to `stdout`.
+
+---
 
 **Step 2:** Convert each hex character to its numeric value.
 
@@ -230,6 +242,8 @@ c (as char) = F, c (as decimal) = 70, numeric value = 15
 ~~~
 
 Take a look at the output of the program and make sure you understand it before moving on.
+
+---
 
 ### Step 3 Process two hex digits at a time. 
 
@@ -317,6 +331,8 @@ hi nibble: 6, low nibble: 12, combined: 6c
 hi nibble: 6, low nibble: 15, combined: 6f
 ~~~
 
+---
+
 **Step 4:** Convert the byte into an ASCII Character.
 
 At this point, all of the hard work is done! You have already:
@@ -352,6 +368,8 @@ learncli$ ./xeh < tests/xeh/input/hello.hex
 Hellolearncli$ 
 ~~~
 
+---
+
 ## Testing your program
 
 Up to this point, you’ve been testing your program by running it and visually checking the output. While this can work for very small programs, it does not scale and it is easy to miss mistakes.
@@ -362,8 +380,11 @@ by comparing your program’s output against known correct results automatically
 You will create test cases using the inputs and expected outputs provided below.
 
 Each test will consist of two files:
+
 - one file containing the hex input
 - one file containing the expected decoded output
+
+---
 
 ### Example setup
 
@@ -412,6 +433,7 @@ learncli$ diff tests/xeh/actual/hello.actual tests/xeh/expected/hello.expected
 ~~~
 
 The `diff` command compares two files line by line:
+
 - `tests/xeh/actual/hello.actual` : what your program produced
 - `tests/xeh/expected/hello.expected` : the correct (expected) output
 
@@ -434,7 +456,9 @@ If you were wondering how the second `cat` is on a new line, it's because I pres
 2. `<Enter>` to get to make the command look neater on a new line.
 3. `cat tests/xeh/expected/hello.expected`
 
-### Another Example
+---
+
+### Example 2
 
 **Step 1** Create the input file.
 
@@ -488,27 +512,15 @@ Again, notice that the shell prompt is on the same line as the output. That is b
 learncli$ ./xeh < tests/xeh/input/digits.hex > tests/xeh/actual/digits.actual
 ~~~
 
-The above command does three things:
-
-1. `./xeh`: Runs your program.
-2. `< tests/xeh/input/digits.hex`: Redirects the contents of `tests/xeh/input/digits.hex` into your program as input.
-3. `> tests/xeh/actual/digits.actual`: Redirects your program’s output into a file named `digits.actual` instead of printing it to the terminal.
-
 Then run this command to compare your program's output to the expected output.
 
 ~~~bash
 learncli$ diff tests/xeh/actual/digits.actual tests/xeh/expected/digits.expected
 ~~~
 
-The `diff` command compares two files line by line:
-- `tests/xeh/actual/digits.actual` : what your program produced
-- `tests/xeh/expected/digits.expected` : the correct output
+The `diff` command compares two files line by line. No output from `diff` means that the files are identical (the test passed).
 
-- No output from `diff` means that the files are identical (the test passed).
-- Any output from `diff` means the files differ (the test failed).
-    - `diff` will show you where the differences are.
-
-You can see for yourself that the contents of the files are the same.
+You can see for yourself that the contents of the files are the same:
 
 ~~~bash
 learncli$ cat tests/xeh/actual/digits.actual
@@ -517,18 +529,12 @@ learncli$ cat tests/xeh/expected/digits.expected
 0123456789learncli$ 
 ~~~
 
-If you were wondering how the second `cat` is on a new line, it's because I pressed `Enter`. So this is what I typed in the terminal:
-
-1. `cat tests/xeh/actual/digits.actual`
-2. `<Enter>` to get to make the command look neater on a new line.
-3. `cat tests/xeh/expected/digits.expected`
-
-
 ### Pause for Questions
 Before continuing, answer the [Gradescope questions on diff](https://www.gradescope.com/courses/1349648/assignments/8582341/outline/edit).
 
+---
 
-### One more example.
+### Example 3.
 
 **Test 3: All Uppercase Letters**
 
@@ -568,6 +574,8 @@ learncli$ diff tests/xeh/actual/upper.actual tests/xeh/expected/upper.expected
 - No output from `diff` means that the files are identical (the test passed).
 - Any output from `diff` means the files differ (the test failed).
     - `diff` will show you where the differences are.
+
+---
 
 ### Now, it's your turn to create the remaining tests.
 
@@ -684,6 +692,8 @@ learncli$ cat tests/xeh/expected/newlines.expected
 
 Once you've created the test files, run the test. The commands to run the test are not provided here as this is your chance to get practice generating the commands yourself.
 
+---
+
 ### Deleting the temporary files
 
 If you run `tree` right now, you will see several temporary files. They all end in `.actual`.
@@ -749,6 +759,8 @@ tests/xeh/
 
 ### Pause for Questions
 Before continuing, answer the [Gradescope questions on running your tests](https://www.gradescope.com/courses/1349648/assignments/8582341/).
+
+---
 
 ### Automating Testing
 
@@ -831,6 +843,8 @@ spaces: PASS
 upper: PASS
 ~~~
 
+---
+
 **Step 5: Clean up temporary files**
 
 The script creates temporary `.actual` files in the `tests/xeh/actual` directory. You can see them with 
@@ -848,6 +862,8 @@ learncli$ rm tests/xeh/actual/*.actual
 ### Pause for Questions
 Before continuing, answer the [Gradescope questions on run_tests.sh](https://www.gradescope.com/courses/1349648/assignments/8582341/).
 
+---
+
 ## Decoding the Clue
 
 Once your basic tests are working, try decoding the first clue:
@@ -857,6 +873,8 @@ learncli$ cat clues/00-nibbles.hex | ./xeh
 ~~~
 
 Once you've successfully decoded `clues/00-nibbles.hex`, you will now have the clue to bring you to the next part. It might take a moment for the page to load.
+
+---
 
 ## Grading
 
