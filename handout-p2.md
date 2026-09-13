@@ -1,9 +1,11 @@
 ---
 geometry:
   - margin=1in
+pdf-engine: weasyprint
+css: code-style.css
+highlight-style: tango
+title: Mysterious Parody Bits
 ---
-
-# Mysterious Parody Bits
 
 ## Lab 1 - COMP211 - Fall 2026
 
@@ -66,6 +68,8 @@ To do this:
 | `C`      | `43`        | `1000011`    | 3 (odd) | `1`        | `10000111`      | `87` |
 | `Z`      | `5A`        | `1011010`    | 4 (even)| `0`        | `10110100`      | `B4` |
 
+---
+
 ## Let's Begin: implementing is_odd
 
 Complete your work for this part of the lab in `parity.c`.
@@ -79,6 +83,8 @@ Open `parity.c` and implement the `is_odd` function. This function should:
 For example, the character `C` has the ASCII value `0x43`, which is `0b1000011` in binary. This binary value contains three 1s. Since 3 is odd, `is_odd` should return `1`.
 
 **You must use bitwise operators to implement this function.**
+
+---
 
 ### Writing Tests for is_odd
 
@@ -140,6 +146,7 @@ learncli$ ./is_odd_prog < tests/parity/is_odd/input/digits.in > tests/parity/is_
 
 Compare the output to the expected output using `diff`.
 
+---
 
 ## Completing parity.c
 Now that `is_odd` is working, you can use it as a building block for the rest of the parity encoder.
@@ -157,6 +164,8 @@ Your task is to:
 - Output the resulting encoded character
 
 - Output a newline character after processing all input
+
+---
 
 ## Testing parity.c
 
@@ -236,6 +245,8 @@ Run the test
 ./parity < tests/parity/input/abcdef.in | ./hex > tests/parity/actual/abcdef.out
 diff tests/parity/actual/abcdef.out tests/parity/expected/abcdef.out
 ~~~
+
+---
 
 ## Makefiles make our lives easier
 
@@ -427,6 +438,7 @@ clean:
 	rm -f xeh hex parity
 ~~~
 
+---
 
 ## To a great mind, nothing is little
 

@@ -1,9 +1,11 @@
 ---
 geometry:
   - margin=1in
+pdf-engine: weasyprint
+css: code-style.css
+highlight-style: tango
+title: Mysterious Parody Bits
 ---
-
-# Mysterious Parody Bits
 
 ## Lab 1 - COMP211 - Fall 2026
 
@@ -27,7 +29,7 @@ Not only should this program decode the output of `parity.c`, but it should also
 
 If a corrupted byte is found:
 
-- Immediately print `\nCorruption detected!\n` to `stderr`
+- Immediately print `Corruption detected!\n` to `stderr`
 
 - Stop processing further input
 
@@ -56,9 +58,13 @@ A note about newlines
 - If you read a newline from the input, ignore it. Do not decode it and do not check its parity. Simply continue to the next input character.
 - Do not add a newline to the output. Only print characters that were successfully decoded from the input.
 
+---
+
 ## Modifying our Makefile 
 
 Modify your Makefile to add a `ytirap` target that builds the `ytirap` executable from `ytirap.c`. Update the `all` and `clean` targets accordingly. Then, answer the corresponding questions on Gradescope.
+
+---
 
 ## Testing
 
@@ -254,9 +260,13 @@ Both should print:
 1
 ~~~
 
+---
+
 ## The Mystery: Solved
 
 Once your implementation of `ytirap` is working, you can decode the final clue in `clues/03-doughnuts.hex`. Remember, you can output the contents of this file with `cat` before piping it into your decoder(s). It was first encoded with `parity`, and then encoded with `hex`. Once you successfully decode it, answers lie within.
+
+---
 
 ## Grading
 

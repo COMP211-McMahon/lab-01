@@ -1,9 +1,11 @@
 ---
 geometry:
   - margin=1in
+pdf-engine: weasyprint
+css: code-style.css
+highlight-style: tango
+title: Mysterious Parody Bits
 ---
-
-# Mysterious Parody Bits
 
 ## Lab 1 - COMP211 - Fall 2026
 
@@ -50,10 +52,9 @@ $ echo "48656C6C6F0A" | ./xeh | ./hex
 48656C6C6F0A
 ~~~
 
-**You should always print a newline (`\n`) at the end of your generated hex output (as shown in the code below).**
+**You should always print a newline (`\n`) at the end of your generated hex output.**
 
-### Pause for Questions
-Before continuing, answer the [Gradescope questions on piping](https://www.gradescope.com/courses/1349648/assignments/8582341/).
+---
 
 ## Where to begin
 
@@ -64,6 +65,8 @@ You already did the opposite work in `xeh.c`. This time, instead of combining tw
 Here is an [ascii table](https://www.rapidtables.com/code/text/ascii-table.html) for your reference.
 
 You're ready to get to it implementing `hex.c`!
+
+---
 
 ## Testing
 
@@ -84,6 +87,8 @@ $ echo "48656C6C6F0A" | ./xeh | ./hex
 48656C6C6F0A
 ~~~
 
+---
+
 ### Writing Additional Test Cases
 
 The program `hex.c` is the reverse of `xeh.c`:
@@ -94,7 +99,8 @@ The program `hex.c` is the reverse of `xeh.c`:
 
 Because of this, we can reuse the same test cases you already created, just in the opposite direction.
 
-**Step 1** Create the test directories
+**Step 1:** Create the test directories
+
 ~~~bash
 mkdir -p tests/hex/{input,expected,actual}
 ~~~
@@ -219,11 +225,7 @@ newlines: PASS
 ### Pause for Questions
 Before continuing, answer the [Gradescope questions on hex_tests.sh](https://www.gradescope.com/courses/1201157/assignments/7581070).
 
-**Step 4:** Clean up temporary files
-
-~~~bash
-$ rm tests/hex/*.tmp
-~~~
+---
 
 ## Line Wrapping
 
@@ -234,6 +236,8 @@ $ echo "The world is full of obvious things which nobody by any chance ever obse
 54686520776F726C642069732066756C6C206F66206F6276696F7573207468696E67732077686963
 68206E6F626F647920627920616E79206368616E63652065766572206F627365727665732E0A
 ~~~
+
+---
 
 ## Education never ends
 
