@@ -441,21 +441,7 @@ The `diff` command compares two files line by line:
 - Any output from `diff` means the files differ (the test failed).
     - `diff` will show you where the differences are.
 
-You can see for yourself that the contents of the files are the same.
-
-~~~bash
-learncli$ cat tests/xeh/actual/hello.actual 
-Hellolearncli$ 
-learncli$ cat tests/xeh/expected/hello.expected 
-Hellolearncli$ 
-~~~
-
-If you were wondering how the second `cat` is on a new line, it's because I pressed `Enter`. So this is what I typed in the terminal:
-
-1. `cat tests/xeh/actual/hello.actual`
-2. `<Enter>` to get to make the command look neater on a new line.
-3. `cat tests/xeh/expected/hello.expected`
-
+You can see for yourself that the contents of the files are the same by printing the contents of each file.
 ---
 
 ### Example 2
@@ -520,14 +506,7 @@ learncli$ diff tests/xeh/actual/digits.actual tests/xeh/expected/digits.expected
 
 The `diff` command compares two files line by line. No output from `diff` means that the files are identical (the test passed).
 
-You can see for yourself that the contents of the files are the same:
-
-~~~bash
-learncli$ cat tests/xeh/actual/digits.actual
-0123456789learncli$ 
-learncli$ cat tests/xeh/expected/digits.expected 
-0123456789learncli$ 
-~~~
+You can see for yourself that the contents of the files are the same by printing the contents of each file.
 
 ### Pause for Questions
 Before continuing, answer the [Gradescope questions on diff](https://www.gradescope.com/courses/1349648/assignments/8582341/outline/edit).
